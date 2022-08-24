@@ -1,5 +1,5 @@
 import Tweet from "../model/tweet";
-import { createRouter } from "../../pages/api/trpc/[trpc]";
+import { createRouter } from "./index";
 
 export const tweetRouter = createRouter().query("all", {
   resolve() {
