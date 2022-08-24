@@ -1,16 +1,10 @@
 import type { NextPage } from "next";
-import { useQuery } from "react-query";
 import TweetCard from "../components/TweetCard";
 import PageContainer from "../containers/Page";
-import Tweet from "../model/tweet";
-
-const fetchTweets = async () => {
-  const response = await fetch("http://localhost:3000/api/tweet");
-  return await response.json();
-};
+import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
-  const { isLoading, data } = useQuery<Tweet[]>("tweets", fetchTweets);
+  const { data, isLoading } = trpc.useQuery(["tweet.all"]);
 
   if (isLoading) {
     return (
