@@ -1,6 +1,6 @@
 import * as trpc from "@trpc/server";
 import * as trpcNext from "@trpc/server/adapters/next";
-import { tweetRouter } from "../../../routers/tweetRouter";
+import { tweetRouter } from "../../../backend/router/tweet";
 
 export function createRouter() {
   return trpc.router();

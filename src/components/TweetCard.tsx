@@ -1,4 +1,4 @@
-import TweetCard from "../model/tweet";
+import TweetCard from "../backend/model/tweet";
 import LikesCounter from "./LikesCounter";
 
 const TweetCard: React.FC<TweetCard> = ({ user, text, likes }) => {
